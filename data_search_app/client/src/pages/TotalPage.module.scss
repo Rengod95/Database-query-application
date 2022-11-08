@@ -1,0 +1,13 @@
+
+.totalPageContainer{
+  display: grid;
+  grid-template-columns:1fr ;
+  grid-template-rows: 2fr 6fr 2fr;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+
+
+

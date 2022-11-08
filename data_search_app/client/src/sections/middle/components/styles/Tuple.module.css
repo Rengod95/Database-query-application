@@ -1,0 +1,9 @@
+.tupleContainer {
+  border: 2px #a2a4a4 dotted;
+}
+.tupleContainer .tupleData {
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+/*# sourceMappingURL=Tuple.module.css.map */
