@@ -1,16 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DataDispatchContext } from "../../store/DataContextProvider";
-import classes from "./CheckBox.module.scss";
+import { DataDispatchContext } from "../../../store/DataContextProvider";
+import classes from "../../../components/UI/CheckBox.module.scss";
 
-const TupleCheckBox = ({ NAME, SSN, onChange }) => {
+const TupleCheckBox = ({ name, ssn, onChange }) => {
   const dispatcher = useContext(DataDispatchContext);
   const [isChecked, setIsChecked] = useState(false);
 
   useEffect(() => {
     if (isChecked) {
-      onChange.tupleSelector({ NAME, SSN });
+      onChange.tupleSelector({ name, ssn });
     } else {
-      onChange.tupleSelectCanceler({ NAME, SSN });
+      onChange.tupleSelectCanceler({ name, ssn });
     }
   }, [isChecked]);
 

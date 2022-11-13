@@ -6,7 +6,7 @@ const SelectTupleTracker = () => {
   const dataState = useContext(DataStateContext);
   const emps = [...dataState.checkedEmp[0]]
     .map((emp) => {
-      return emp.NAME;
+      return emp.name;
     })
     .join(" ");
   const totalSelected = dataState.checkedEmp[1];

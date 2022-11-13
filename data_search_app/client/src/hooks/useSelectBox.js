@@ -14,6 +14,7 @@ const useSelectBox = (searchConditionHandler) => {
   const mainSelectorHandler = () => {
     switch (mainSelectRefer.current.value) {
       case "DEFAULT": {
+        setSubSelected("DEFAULT")
         return setMainSelected("DEFAULT");
       }
       case "DEPARTMENT": {

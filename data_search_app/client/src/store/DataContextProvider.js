@@ -26,14 +26,14 @@ export const DataContextProvider = (props) => {
   const [tupleDataSet, setTupleDataSet] = useState(defaultTupleList); // 검색 결과
   const [tupleRange, setTupleRange] = useState([
     "선택",
-    "NAME",
-    "SSN",
-    "BDATE",
-    "ADDRESS",
-    "SEX",
-    "SALARY",
-    "SUPERVISOR",
-    "DEPARTMENT",
+    "name",
+    "ssn",
+    "bdate",
+    "address",
+    "sex",
+    "salary",
+    "supervisor",
+    "department",
   ]);
   const [checkedEmp, setCheckedEmp] = useState([new Set(), 0]);
   const [totalCondition, setTotalCondition] = useState({

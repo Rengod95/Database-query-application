@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DataDispatchContext } from "../../../store/DataContextProvider";
 import classes from "./styles/Tuple.module.scss";
-import TupleCheckBox from "../../../components/UI/TupleCheckBox";
+import TupleCheckBox from "./TupleCheckBox";
 
 const Tuple = (props) => {
   const { data, range } = props;
@@ -10,12 +10,14 @@ const Tuple = (props) => {
     .map((key) => data[key])
     .filter((val) => val !== undefined);
 
+    console.log(dataArr)
+
   return (
     <tr className={classes.tupleContainer}>
       <td className={classes.tupleData}>
         <TupleCheckBox
-          NAME={data.NAME}
-          SSN={data.SSN}
+          name={data.name}
+          ssn={data.ssn}
           className={classes.checkBox}
           onChange={props.checkBoxHandler}
         />

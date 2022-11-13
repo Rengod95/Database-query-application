@@ -35,10 +35,10 @@ const TupleList = () => {
             </tr>
           </thead>
           <tbody>
-            {dataState.tupleDataSet.map((_data, idx) => {
+            {dataState.tupleDataSet.map((_data) => {
               return (
                 <Tuple
-                  key={_data.SSN}
+                  key={_data.ssn}
                   range={dataState.tupleRange}
                   data={_data}
                   checkBoxHandler={checkBoxHandler}

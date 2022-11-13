@@ -5,16 +5,16 @@ import APIHandler from "../../../api/APIHandler";
 import { DataDispatchContext } from "../../../store/DataContextProvider";
 
 const defaultTupleForm = {
-  FirstName: undefined,
-  MiddleInit: undefined,
-  LastName: undefined,
-  Ssn: undefined,
-  Birthdate: undefined,
-  Address: undefined,
-  Sex: "F",
-  Salary: undefined,
-  SuperSsn: undefined,
-  Dno: undefined,
+  firstName: undefined,
+  middleInit: undefined,
+  lastName: undefined,
+  ssn: undefined,
+  birthDate: undefined,
+  address: undefined,
+  sex: "F",
+  salary: undefined,
+  superSsn: undefined,
+  dno: undefined,
 };
 
 const TupleCreateForm = () => {
@@ -39,14 +39,14 @@ const TupleCreateForm = () => {
           subCondition: "DEFAULT",
         },
         [
-          "NAME",
-          "SSN",
-          "BDATE",
-          "ADDRESS",
-          "SEX",
-          "SALARY",
-          "SUPERVISOR",
-          "DEPARTMENT",
+          "name",
+          "ssn",
+          "bdate",
+          "address",
+          "sex",
+          "salary",
+          "supervisor",
+          "department",
         ]
       ).then((res) => {
         dispatcher.setTupleDataSet(res.data);
@@ -65,6 +65,8 @@ const TupleCreateForm = () => {
     });
   };
 
+
+
   return (
     <div className={classes.FormContainer}>
       <div className={classes.Card}>
@@ -72,40 +74,40 @@ const TupleCreateForm = () => {
           <span className={classes.span}>신규 직원 정보 추가</span>
           <Input
             type={"text"}
-            title={"FirstName"}
+            title={"firstName"}
             inputValueObserver={inputValueObserver}
           />
           <Input
             type={"text"}
-            title={"MiddleInit"}
+            title={"middleInit"}
             inputValueObserver={inputValueObserver}
           />
           <Input
             type={"text"}
-            title={"LastName"}
+            title={"lastName"}
             inputValueObserver={inputValueObserver}
           />
           <Input
             type={"text"}
-            title={"Ssn"}
+            title={"ssn"}
             inputValueObserver={inputValueObserver}
           />
           <Input
             type={"date"}
-            title={"Birthdate"}
+            title={"birthDate"}
             inputValueObserver={inputValueObserver}
           />
           <Input
             type={"text"}
-            title={"Address"}
+            title={"address"}
             inputValueObserver={inputValueObserver}
           />
           <div className={classes.selectContainer}>
-            <span className={classes.selectSpan}>SEX</span>
+            <span className={classes.selectSpan}>sex</span>
             <select
               className={classes.select}
               onChange={inputValueObserver}
-              title={"SEX"}
+              title={"sex"}
               defaultValue={"F"}
             >
               <option value="F">F</option>
@@ -114,17 +116,17 @@ const TupleCreateForm = () => {
           </div>
           <Input
             type={"text"}
-            title={"Salary"}
+            title={"salary"}
             inputValueObserver={inputValueObserver}
           />
           <Input
             type={"text"}
-            title={"SuperSsn"}
+            title={"superSsn"}
             inputValueObserver={inputValueObserver}
           />
           <Input
             type={"text"}
-            title={"Dno"}
+            title={"dno"}
             inputValueObserver={inputValueObserver}
           />
           <button className={classes.button}>정보 추가하기</button>

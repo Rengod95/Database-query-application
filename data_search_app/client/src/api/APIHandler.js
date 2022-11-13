@@ -7,6 +7,7 @@ const APIHandler = (function () {
 
   const getTuples = async (searchCondition, searchRange) => {
     const range = searchRange.map((val) => `&range=${val}`).join("");
+    if(searchCondition.mainCondition === 'default') searchCondition.subCondition= 'default'
     console.log(range);
     return await axios({
       url:

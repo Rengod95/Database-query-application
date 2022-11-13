@@ -6,7 +6,7 @@ const RangeCheckBox = ({ ATTRIBUTE, searchRangeHandler }) => {
   const [isChecked, setIsChecked] = useState(true);
 
   useEffect(() => {
-    searchRangeHandler(ATTRIBUTE);
+    searchRangeHandler(ATTRIBUTE.toLowerCase());
   }, [isChecked]);
 
   const checkBoxRangeChangeHandler = (event) => {

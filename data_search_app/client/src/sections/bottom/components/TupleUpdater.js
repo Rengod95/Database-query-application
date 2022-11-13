@@ -11,9 +11,9 @@ const TupleUpdater = () => {
       <div className={classes.selectContainer}>
         <span className={classes.span}>수정:</span>
         <select ref={selectRefer} className={classes.selector}>
-          <option value="ADDRESS">ADDRESS</option>
-          <option value="SEX">SEX</option>
-          <option value="SALARY">SALARY</option>
+          <option value="address">ADDRESS</option>
+          <option value="sex">SEX</option>
+          <option value="salary">SALARY</option>
         </select>
         <input
           ref={inputRefer}

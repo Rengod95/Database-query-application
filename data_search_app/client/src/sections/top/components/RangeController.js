@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import classes from "./styles/RangeController.module.scss";
-import TupleCheckBox from "../../../components/UI/TupleCheckBox";
+import TupleCheckBox from "../../middle/components/TupleCheckBox";
 import { DataStateContext } from "../../../store/DataContextProvider";
 import RangeCheckBox from "./RangeCheckBox";
 

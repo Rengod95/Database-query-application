@@ -36,7 +36,7 @@ const ConditionManager = () => {
   const searchConditionHandler = (mainCondition, subCondition) => {
     // console.log(`메인 조건 : ${mainCondition} 서브 조건: ${subCondition} `);
     setSearchCondition(() => {
-      return { mainCondition: mainCondition, subCondition: subCondition };
+      return { mainCondition: mainCondition.toLowerCase(), subCondition: subCondition.toLowerCase() };
     });
   };
 
