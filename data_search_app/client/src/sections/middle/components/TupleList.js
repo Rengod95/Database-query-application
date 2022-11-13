@@ -20,10 +20,11 @@ const TupleList = () => {
         <table className={classes.tupleTable}>
           <thead>
             <tr className={classes.header}>
+              <th>선택</th>
               {dataState.tupleRange.map((val) => (
                 <th key={val}>{val}</th>
               ))}
-              {/*<th>선택</th>*/}
+
               {/*<th>NAME</th>*/}
               {/*<th>SSN</th>*/}
               {/*<th>BDATE</th>*/}

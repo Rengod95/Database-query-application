@@ -25,7 +25,7 @@ export const DataDispatchContext = createContext(defaultDataDispatch);
 export const DataContextProvider = (props) => {
   const [tupleDataSet, setTupleDataSet] = useState(defaultTupleList); // 검색 결과
   const [tupleRange, setTupleRange] = useState([
-    "선택",
+
     "name",
     "ssn",
     "bdate",

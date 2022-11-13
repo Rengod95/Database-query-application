@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 const APIHandler = (function () {
-  axios.defaults.baseURL = "http://localhost:3001";
+  axios.defaults.baseURL = "http://localhost:8080";// 3001->8080
   axios.defaults.withCredentials = true;
 
   const getTuples = async (searchCondition, searchRange) => {
@@ -10,8 +10,8 @@ const APIHandler = (function () {
     if(searchCondition.mainCondition === 'default') searchCondition.subCondition= 'default'
     console.log(range);
     return await axios({
-      url:
-        `/employee?$mainCondition=${searchCondition.mainCondition}&subCondition=${searchCondition.subCondition}` +
+      url://$mainCondition -> mainConditon
+        `/employee?mainCondition=${searchCondition.mainCondition}&subCondition=${searchCondition.subCondition}` +
         range,
       method: "GET",
     });
