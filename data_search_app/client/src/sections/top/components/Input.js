@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import classes from "./styles/Input.module.scss";
 
-const Input = ({ title, type, inputValueObserver, inputResetHandler }) => {
+const Input = ({ title, type, inputValueObserver }) => {
   const inputRefer = useRef("");
   const [inputValue, setInputValue] = useState('')
 

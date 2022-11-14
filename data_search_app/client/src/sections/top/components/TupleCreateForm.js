@@ -66,6 +66,13 @@ const TupleCreateForm = () => {
   };
 
 
+  const selectValueObserver = ()=> {
+    setInputForm((prev)=>{
+      return {
+        ...prev, [selectRefer.current.title]:selectRefer.current.value
+      }
+    })
+  }
 
   return (
     <div className={classes.FormContainer}>
@@ -106,12 +113,12 @@ const TupleCreateForm = () => {
             <span className={classes.selectSpan}>sex</span>
             <select
               className={classes.select}
-              onChange={inputValueObserver}
+              onChange={selectValueObserver}
               title={"sex"}
-              defaultValue={"F"}
+              ref={selectRefer}
             >
-              <option value="F">F</option>
-              <option value={"M"}>M</option>
+              <option value={"f"}>F</option>
+              <option value={"m"}>M</option>
             </select>
           </div>
           <Input
