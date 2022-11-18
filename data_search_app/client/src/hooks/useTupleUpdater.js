@@ -6,6 +6,7 @@ import {
 import APIHandler from "../api/APIHandler";
 
 const useTupleUpdater = () => {
+  const departmentRefer = useRef("default")
   const selectRefer = useRef("");
   const inputRefer = useRef("");
   const dataState = useContext(DataStateContext);
@@ -38,6 +39,7 @@ const useTupleUpdater = () => {
     dataState,
     dispatcher,
     clickHandler,
+    departmentRefer,
   };
 };
 

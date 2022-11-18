@@ -3,18 +3,18 @@ import classes from "./styles/TupleUpdater.module.scss";
 import useTupleUpdater from "../../../hooks/useTupleUpdater";
 
 const TupleUpdater = () => {
-  const { selectRefer, inputRefer, dataState, dispatcher, clickHandler } =
+  const { selectRefer, inputRefer,  clickHandler } =
     useTupleUpdater();
 
   return (
     <div className={classes.Card}>
-      <div className={classes.selectContainer}>
+      <div className={classes.Container}>
         <span className={classes.span}>수정:</span>
-        <select ref={selectRefer} className={classes.selector}>
-          <option value="address">ADDRESS</option>
-          <option value="sex">SEX</option>
-          <option value="salary">SALARY</option>
-        </select>
+          <select ref={selectRefer} className={classes.selector}>
+            <option value="address">ADDRESS</option>
+            <option value="sex">SEX</option>
+            <option value="salary">SALARY</option>
+          </select>
         <input
           ref={inputRefer}
           className={classes.inputContainer}
