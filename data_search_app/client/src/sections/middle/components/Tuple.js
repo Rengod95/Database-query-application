@@ -10,7 +10,7 @@ const Tuple = (props) => {
     .map((key) => data[key])
     .filter((val) => val !== undefined);
 
-    console.log(dataArr)
+    // console.log(dataArr)
 
   return (
     <tr className={classes.tupleContainer}>

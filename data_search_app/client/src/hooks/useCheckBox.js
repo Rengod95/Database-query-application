@@ -8,8 +8,8 @@ const useCheckBox = () => {
 
   const tupleSelectCanceler = (emp) => {
     const currentRange = [...selectedEmployees];
-    console.log(selectedEmployees);
-    const deleted = currentRange.filter((_emp) => _emp.SSN !== emp.SSN);
+    // console.log(selectedEmployees);
+    const deleted = currentRange.filter((_emp) => _emp.ssn !== emp.ssn);
     const count = deleted.length;
     setTotalSelected(() => count);
     setSelectedEmployees(() => new Set(deleted));

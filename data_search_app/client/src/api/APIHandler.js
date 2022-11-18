@@ -1,4 +1,3 @@
-import React from "react";
 import axios from "axios";
 
 const APIHandler = (function () {
@@ -44,11 +43,30 @@ const APIHandler = (function () {
     });
   };
 
+  const updateByDepartment= async (department,value)=>{
+
+    return await axios({
+      url: `/department?dname=${department}&value=${value}`,
+      method:"PATCH",
+    })
+  }
+
+  const getDependent = async (emps)=>{
+    const emp = Array.from(emps[0]);
+    return await axios({
+      url: '/dependent',
+      method:"GET",
+      data:emp
+    })
+  }
+
   return {
     getTuples,
     updateTupleAttribute,
     deleteTuple,
     createTuple,
+    getDependent,
+    updateByDepartment
   };
 })();
 
