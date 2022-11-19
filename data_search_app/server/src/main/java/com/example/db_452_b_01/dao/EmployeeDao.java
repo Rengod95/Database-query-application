@@ -29,10 +29,13 @@ public class EmployeeDao {
         }else if(main.equals("salary")){ //salary 기준으로 검색 시
             selectEmployeeQuery += "AND e1."+main+">=\""+sub +"\"";
         }else if(main.equals("bdate")){//bdate 기준으로 검색 시
-            selectEmployeeQuery = "AND e1."+main+" like \"____-"+sub +"-__\"";
+            selectEmployeeQuery += "AND e1."+main+" like \"____-"+sub +"-__\"";
         }else if(main.equals("subordinate")){//subordinate 기준으로 검색 시
             String[] name = sub.split(" ");
             selectEmployeeQuery += "AND e2.Fname=\""+name[0] +"\" AND e2.Minit=\""+name[1] +"\" And e2.Lname=\""+name[2] +"\"";
+        }else if(main.equals("department")){//subordinate 기준으로 검색 시
+            String[] name = sub.split(" ");
+            selectEmployeeQuery += "AND Dname=\""+sub+"\"";
         }
 
 
