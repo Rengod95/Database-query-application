@@ -9,8 +9,7 @@ const APIHandler = (function () {
     if(searchCondition.mainCondition === 'default') searchCondition.subCondition= 'default'
     console.log(range);
     return await axios({
-      url://$mainCondition -> mainConditon
-        `/employee?mainCondition=${searchCondition.mainCondition}&subCondition=${searchCondition.subCondition}` +
+      url:`/employee?mainCondition=${searchCondition.mainCondition}&subCondition=${searchCondition.subCondition}` +
         range,
       method: "GET",
     });
@@ -44,17 +43,22 @@ const APIHandler = (function () {
   };
 
   const updateByDepartment= async (department,value)=>{
+
     return await axios({
       url: `/department?dname=${department}&value=${value}`,
       method:"PATCH",
     })
   }
 
-  const getDependent = async ()=>{
+  const getDependent = async (emps)=>{
+    const emp = Array.from(emps[0]);
+    console.log(emp.toString());
     return await axios({
       url: '/dependent',
-      method:"GET",
-    })
+      method:"POST",
+      data: emp,
+
+    });
   }
 
   return {

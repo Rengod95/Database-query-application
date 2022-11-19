@@ -24,7 +24,6 @@ public class EmployeeDao {
         // default query
         String selectEmployeeQuery = "SELECT * FROM employee e1 LEFT JOIN employee e2 ON e1.Super_ssn = e2.Ssn, department  WHERE e1.Dno=Dnumber ";
 
-
         if(main.equals("sex")) { //sex 기준으로 검색 시
             selectEmployeeQuery += "AND e1."+main+"=\""+sub +"\"";
         }else if(main.equals("salary")){ //salary 기준으로 검색 시
@@ -38,21 +37,7 @@ public class EmployeeDao {
 
 
             System.out.println(selectEmployeeQuery);
-        return this.jdbcTemplate.query(selectEmployeeQuery,
-                    (rs, rowNum) -> new EmployeeRes(
-                                  rs.getString("e1.Fname"),
-                                  rs.getString("e1.Minit"),
-                                  rs.getString("e1.Lname"),
-                                  rs.getString("e1.Ssn"),
-                                  rs.getString("e1.Bdate"),
-                                  rs.getString("e1.Address"),
-                                  rs.getString("e1.Sex"),
-                                  rs.getInt("e1.Salary"),
-                                  rs.getString("e2.Fname"),
-                                  rs.getString("e2.Lname"),
-                                  rs.getString("e2.Minit"),
-                                  rs.getString("Dname")
-                    ));
+        return getEmployeeRes(selectEmployeeQuery, this.jdbcTemplate);
     }
 
     // employee 추가
@@ -106,5 +91,23 @@ public class EmployeeDao {
         String checkSsnQuery = "SELECT EXISTS(SELECT ssn FROM employee WHERE ssn = ?)";
         String checkSsnParams = ssn;
         return this.jdbcTemplate.queryForObject(checkSsnQuery, Boolean.class, checkSsnParams);
+    }
+
+    static List<EmployeeRes> getEmployeeRes(String selectEmployeeQuery, JdbcTemplate jdbcTemplate) {
+        return jdbcTemplate.query(selectEmployeeQuery,
+                (rs, rowNum) -> new EmployeeRes(
+                        rs.getString("e1.Fname"),
+                        rs.getString("e1.Minit"),
+                        rs.getString("e1.Lname"),
+                        rs.getString("e1.Ssn"),
+                        rs.getString("e1.Bdate"),
+                        rs.getString("e1.Address"),
+                        rs.getString("e1.Sex"),
+                        rs.getInt("e1.Salary"),
+                        rs.getString("e2.Fname"),
+                        rs.getString("e2.Lname"),
+                        rs.getString("e2.Minit"),
+                        rs.getString("Dname")
+                ));
     }
 }

@@ -31,7 +31,7 @@ public class EmployeeController {
 
     //모든 employee 검색
     @GetMapping("/employee")
-    public List<Map> getEmployees(@RequestParam(value = "mainCondition") String main, @RequestParam(value = "subCondition") String sub, @RequestParam(value = "range") String[] check) throws JsonProcessingException {
+    public List<Map> getEmployees(@RequestParam(value = "mainCondition") String main, @RequestParam(value = "subCondition") String sub, @RequestParam(value = "range") String[] check) {
 
         List<EmployeeRes> employeeReses = employeeService.showEmployee(main, sub);
         List<Map> maps = new ArrayList<>();

@@ -20,7 +20,8 @@ const TupleList = () => {
 
   console.log("튜플 리스트 리렌더링");
   const modalFetchHandler = async ()=> {
-      await APIHandler.getDependent().then(res => {
+        console.log(dataState.checkedEmp)
+        APIHandler.getDependent(dataState.checkedEmp).then(res => {
           setDependents(prev => res.data)
           modalStateHandler()
       })
@@ -123,7 +124,6 @@ const TupleList = () => {
             <button className={classes.close} onClick={modalStateHandler}>
                 X
             </button>
-            <p>모달창입니다.</p>
             <table>
                 <thead>
                     <tr>
@@ -136,7 +136,11 @@ const TupleList = () => {
                 </thead>
                 <tbody>
                 {dependents.map(dept => {
-                    return <tr>{dept.map(val => <td key={val}>{val}</td>)}</tr>
+                    let st = []
+                    for(let key in dept){
+                        st.push(dept[key])
+                    }
+                    return  <tr>{st.map(val => <td>{val}</td>)}</tr>
                 })}
                     <tr></tr>
                 </tbody>
