@@ -1,5 +1,5 @@
 # Database-query-application
-/---
+
 1. Database-query-application\data_search_app\client로 이동  
  ![image](https://user-images.githubusercontent.com/101792740/202890928-25ae3dfc-8144-4103-8931-b9361bddb221.png)
 2. npm i -> 노드 모듈 설치  
