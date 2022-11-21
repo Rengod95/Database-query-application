@@ -100,16 +100,6 @@ export const defaultTupleList = [
     supervisor: "직속상사",
     department: "근무 부서",
   },
-  {
-    name: "병신",
-    ssn: "3326253",
-    bdate: "0000-00-00",
-    address: "주소지",
-    sex: "F/M",
-    salary: "00000.00",
-    supervisor: "직속상사",
-    department: "근무 부서",
-  },
 ];
 
 export default defaultTupleDataForm;
